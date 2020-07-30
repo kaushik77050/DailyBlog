@@ -1,0 +1,15 @@
+<%- include("partials/header"); -%>
+
+<h1>Home</h1>
+<p> <%= p1 %> </p>
+
+
+<%postedContent.forEach(function(posted){%>
+  <h2><%=posted.title%></h2>
+  <% var tpost = posted.content; %>
+  <% var postTruncated = tpost.substring(0,100) + "..."; %>
+  <p><%=postTruncated%></p>
+  <a href="posts/<%= posted.title %>"><label>Read More</label></a>
+<%});%>
+
+<%- include("partials/footer"); -%>
